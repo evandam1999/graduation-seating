@@ -202,13 +202,17 @@ lS.close()
 # Print out full list of names.
 s1 = open('./Output/FullListDebug.txt', "w")
 s2 = open('./Output/CallOutList.txt', "w")
+s3 = open('./Output/CallOutListSmart.txt', "w")
 
-# LTM - put SKids on front of OS for rest of processing
-OS[0:0] = SKids
+# No smart kids in the callout list, they are in a seperate list that brandy does
+#OS[0:0] = SKids
 
 for k in OS:
     s1.write(k)
     s1.write('\n')
+for k in SKids:  
+    s3.write(k)
+    s3.write('\n')
 
 
 #Swap first and last names
@@ -243,9 +247,8 @@ for i in xrange(0,len(OS),2):
         elif len(OS) - i+1 == 1:
             s2.write(OS[i])
 
-
-
 s1.close()
 s2.close()
+s3.close()
 
 print HKids
